@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>HTML 기초 배우기</title>
+  <script>
+    function check() {
+
+      let score = 0;
+
+      for (let q of ["q1", "q2", "q3"]) {
+
+        let answer = document.querySelector(
+          'input[name="' + q + '"]:checked'
+        );
+
+        if (answer) {
+          score += Number(answer.value);
+        }
+      }
+
+      document.getElementById("result").innerText =
+        "점수: " + score + " / 3점";
+    }
+  </script>
+  <style>
+    body {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #f2f5fa;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #4169e1;
+      color: white;
+      padding: 25px;
+      text-align: center;
+      border-radius: 12px;
+    }
+
+    section {
+      background: white;
+      padding: 25px;
+      margin: 20px 0;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px #ddd;
+    }
+
+    h2 {
+      color: #4169e1;
+      border-bottom: 2px solid #4169e1;
+      padding-bottom: 8px;
+    }
+
+    .tag {
+      background: #eef3ff;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 8px;
+    }
+
+    pre {
+      background: #222;
+      color: white;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    button {
+      padding: 12px 25px;
+      background: #4169e1;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <header>
+    <h1>HTML 기초 배우기</h1>
+    <p>처음 배우는 HTML</p>
+  </header>
+
+
+  <section>
+    <h2>1. HTML이란?</h2>
+
+    <p>
+      HTML은 <b>웹페이지의 내용과 구조</b>를 만드는 언어입니다.
+    </p>
+
+    <p>
+      쉽게 말하면 웹페이지의 <b>뼈대</b>라고 생각하면 됩니다.
+    </p>
+  </section>
+
+
+  <section>
+    <h2>2. HTML 태그</h2>
+
+    <div class="tag">
+      <b>&lt;h1&gt;</b> → 제목
+    </div>
+
+    <div class="tag">
+      <b>&lt;p&gt;</b> → 문단
+    </div>
+
+    <div class="tag">
+      <b>&lt;img&gt;</b> → 이미지
+    </div>
+
+    <div class="tag">
+      <b>&lt;a&gt;</b> → 링크
+    </div>
+  </section>
+
+
+  <section>
+    <h2>3. HTML 예제</h2>
+
+    <pre>
+&lt;h1&gt;안녕하세요&lt;/h1&gt;
+&lt;p&gt;HTML을 배우고 있어요.&lt;/p&gt;
+    </pre>
+
+    <p>
+      위 코드는 제목과 문장을 만들어 줍니다.
+    </p>
+  </section>
+
+
+  <section>
+    <h2>4. 간단한 퀴즈</h2>
+
+    <p><b>1. HTML은 무엇을 만들까요?</b></p>
+
+    <label>
+      <input type="radio" name="q1" value="1">
+      웹페이지
+    </label>
+
+    <br>
+
+    <label>
+      <input type="radio" name="q1" value="0">
+      자동차
+    </label>
+
+
+    <p><b>2. 제목을 만드는 태그는?</b></p>
+
+    <label>
+      <input type="radio" name="q2" value="0">
+      &lt;p&gt;
+    </label>
+
+    <br>
+
+    <label>
+      <input type="radio" name="q2" value="1">
+      &lt;h1&gt;
+    </label>
+
+
+    <p><b>3. 문단을 만드는 태그는?</b></p>
+
+    <label>
+      <input type="radio" name="q3" value="1">
+      &lt;p&gt;
+    </label>
+
+    <br>
+
+    <label>
+      <input type="radio" name="q3" value="0">
+      &lt;img&gt;
+    </label>
+
+    <br><br>
+
+    <button onclick="check()">정답 확인</button>
+
+    <h2 id="result"></h2>
+  </section>
+</body>
+</html>
